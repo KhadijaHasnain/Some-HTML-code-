@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style>
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        .header.bg{
+            background-color: black;
+        }
+
+        .header-content .brand-logo h3 {
+            color: #fff;
+        }
+
+        .dark-light-toggle {
+            color: #fff;
+        }
+
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu ul li a {
+            color: #fff;
+        }
+
+        .content-body {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .wallet-widget.card {
+            background-color: Dark;
+            color: #fff;
+        }
+
+        .table-striped.responsive-table th,
+        .table-striped.responsive-table td {
+            border-color: #666;
+        }
+
+        .table-striped.responsive-table th {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .table-striped.responsive-table tbody tr:nth-of-type(odd) {
+            background-color: #333;
+        }
+
+        .table-striped.responsive-table tbody tr:nth-of-type(even) {
+            background-color: #444;
+        }
+    </style>
+	<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Dashboard - Paid To Click PHP Script</title>
+
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+
+<link rel="stylesheet" href="https://tblock.dev/simpleptc/templates/frontend/css/style.css">
+<link rel="stylesheet" href="https://tblock.dev/simpleptc/templates/frontend/css/custom.css">
+<script src="https://tblock.dev/simpleptc/templates/frontend/vendor/jquery/jquery.min.js"></script>
+<meta name="csrf-token" content="ivxpcfsSy7nsCRonDLFBbg5uwY00qQsHq54rVW0O">
+</head>
+<body class="dashboard dark-mode">
+<div id="preloader"><i>.</i><i>.</i><i>.</i></div>
+<div id="main-wrapper">
+<div class="header bg">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xxl-12">
+<div class="header-content">
+<div class="header-left">
+<div class="brand-logo">
+<a href="/">
+<h3>SimplePTC</h3>
+</a>
+</div>
+</div>
+<div class="header-right">
+<div class="dark-light-toggle" onclick="themeToggle()">
+<span class="dark"><i class="bi bi-moon"></i></span>
+<span class="light"><i class="bi bi-brightness-high"></i></span>
+</div>
+<div class="notification dropdown">
+<div class="notify-bell" data-toggle="dropdown">
+<span><i class="bi bi-bell"></i></span>
+</div>
+<div class="dropdown-menu dropdown-menu-right notification-list">
+<h4>Notifications</h4>
+<div class="lists">
+<a href="https://tblock.dev/simpleptc/account/notifications">More <i class="icofont-simple-right"></i></a>
+</div>
+</div>
+</div>
+<div class="profile_log dropdown">
+<div class="user" data-toggle="dropdown">
+<span class="thumb"><img src="https://tblock.dev/simpleptc/templates/frontend/images/user.png" alt="user-icon"></span>
+<span class="arrow"><i class="icofont-angle-down"></i></span>
+</div>
+<div class="dropdown-menu dropdown-menu-right">
+<div class="user-email">
+<div class="user">
+<div class="user-info">
+<h5>admin</h5>
+<span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cbaaafa6a2a58baea6aaa2a7e5a8a4a6">[email&#160;protected]</a></span>
+</div>
+</div>
+</div>
+<div class="user-balance">
+<div class="available">
+<p>Account</p>
+<span>0.00 USD</span>
+</div>
+<div class="total">
+<p>Purchase</p>
+<span>0.00 USD</span>
+</div>
+</div>
+<a href="https://tblock.dev/simpleptc/account/profile" class="dropdown-item">
+<i class="bi bi-gear"></i> Account
+</a>
+<a href="https://tblock.dev/simpleptc/logout" onclick="event.preventDefault(); document.getElementById('logout-form2').submit();" class="dropdown-item logout">
+<i class="bi bi-power"></i> Log out
+</a>
+<form id="logout-form2" action="https://tblock.dev/simpleptc/logout" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="ivxpcfsSy7nsCRonDLFBbg5uwY00qQsHq54rVW0O"> </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebar">
+<div class="menu">
+<ul>
+<li>
+<a href="https://tblock.dev/simpleptc/home" data-toggle="tooltip" data-placement="right" title="Dashboard">
+<span><i class="bi bi-house"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/ads" data-toggle="tooltip" data-placement="right" title="Ads">
+<span><i class="bi bi-globe2"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/deposit" data-toggle="tooltip" data-placement="right" title="Deposits">
+<span><i class="bi bi-wallet2"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/withdraw" data-toggle="tooltip" data-placement="right" title="Withdraw">
+<span><i class="bi bi-arrow-up"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/account/profile" data-toggle="tooltip" data-placement="right" title="Account">
+<span><i class="bi bi-gear"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/account/tickets" data-toggle="tooltip" data-placement="right" title="Support">
+<span><i class="bi bi-question-circle-fill"></i></span>
+</a>
+</li>
+<li><a href="https://tblock.dev/simpleptc/admin" data-toggle="tooltip" data-placement="right" title="Admin">
+<span><i class="bi bi-display" style="color: #D7492A"></i></span>
+</a>
+</li>
+<li class="logout"><a href="https://tblock.dev/simpleptc/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" data-toggle="tooltip" data-placement="right" title="Log out">
+<span><i class="bi bi-power"></i></span>
+</a>
+</li>
+<form id="logout-form" action="https://tblock.dev/simpleptc/logout" method="POST" style="display: none;">
+<input type="hidden" name="_token" value="ivxpcfsSy7nsCRonDLFBbg5uwY00qQsHq54rVW0O"> </form>
+</ul>
+<p class="copyright">
+&#169; <a href="https://tblock.dev/simpleptc/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
+</p>
+</div>
+</div>
+<div class="content-body">
+<div class="container-fluid">
+<div class="text-center">
+<div class="text-center">
+</div> </div>
+<div class="text-center">
+</div>
+<br>
+<div class="row">
+<div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+<div class="wallet-widget card">
+<h5>Account</h5>
+<h2><span class="text-primary">0.10</span> <sub>USD</sub></h2>
+<p>= 1.29654000 DOGE</p>
+</div>
+</div>
+<div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+<div class="wallet-widget card">
+<h5>Purchase</h5>
+<h2><span class="text-success">0.00</span> <sub>USD</sub></h2>
+<p>= 0.00000000 DOGE</p>
+</div>
+</div>
+<div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+<div class="wallet-widget card">
+<h5>Referrals</h5>
+<h2><span class="text-warning">0.00</span> <sub>USD</sub></h2>
+<p>= 0.00000000 DOGE</p>
+</div>
+</div>
+<div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+<div class="wallet-widget card">
+<h5>Withdraw</h5>
+<h2><span class="text-danger">0.00</span> <sub>USD</sub></h2>
+<p>= 0.00000000 DOGE</p>
+</div>
+</div>
+</div>
+<div class="text-center">
+</div>
+<div class="row">
+<div class="col-xxl-6">
+<div class="card">
+<div class="card-header">
+<h4 class="card-title">Deposits</h4>
+</div>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped responsive-table">
+<thead>
+<tr>
+<th>Date</th>
+<th>Method</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div class="text-center">
+<br>
+<i class="fa fa-solid fa-arrow-down fa-2x"></i>
+<h4>You haven&#039;t receive any deposit yet</h4>
+<p>Here will be shown the last 10 deposits on your account</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xxl-6">
+<div class="card">
+<div class="card-header">
+<h4 class="card-title">Withdrawals</h4>
+</div>
+<div class="card-body">
+<div class="table-responsive">
+<table class="table table-striped responsive-table">
+<thead>
+<tr>
+<th>Date</th>
+<th>Coin</th>
+<th>Amount</th>
+<th>Method</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div class="text-center">
+<br>
+<i class="fa fa-solid fa-arrow-up fa-2x"></i>
+<h4>You haven&#039;t made any withdrawals yet</h4>
+<p>Here will be shown the last 10 withdrawals on your account</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-6 text-center">
+</div>
+<div class="col-lg-6 text-center">
+</div>
+</div>
+<div class="text-center">
+</div>
+<br>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://tblock.dev/simpleptc/templates/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://tblock.dev/simpleptc/templates/frontend/vendor/basic-table/jquery.basictable.min.js"></script>
+<script src="https://tblock.dev/simpleptc/templates/frontend/js/plugins/basic-table-init.js"></script>
+<script src="https://tblock.dev/simpleptc/templates/frontend/js/dashboard.js"></script>
+<script src="https://tblock.dev/simpleptc/templates/frontend/js/scripts.js"></script>
+<script src="https://tblock.dev/simpleptc/templates/frontend/js/custom.js"></script>
+  <script>
+        // JavaScript for toggling dark mode
+        function themeToggle() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+</html>
