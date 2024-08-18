@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("CometPhotoTaggingConstants",[],(function(a,b,c,d,e,f){"use strict";a=3;b=1;c=94;f.BOX_BORDER_SIZE=a;f.INITIAL_PHOTO_RENDER_SCALE=b;f.TAGGING_BOX_SIZE=c}),66);
+__d("XCometPageShopsControllerRouteBuilder",["jsRouteBuilder"],(function(a,b,c,d,e,f,g){a=c("jsRouteBuilder")("/{vanity}/shop/",Object.freeze({ref:"",preview:!1}),void 0);b=a;g["default"]=b}),98);

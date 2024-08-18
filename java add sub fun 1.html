@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    <title>JavaScript for add , sub , mul and div</title>
+    <head>
+        <style>
+            body{
+                text-align: center;
+            }
+            button{
+                display: inline;
+                background-color: red;
+                color: white;
+                margin: 10px;
+                width: 70px;
+                padding: 20px;
+            }
+            button:hover{
+                background-color: blue;
+            }
+            h1{
+                display: inline;
+                background-color: blue;
+                color: white;
+                width: 90px;
+                padding: 5px;
+            }
+            p{
+                color: red;
+            }
+        </style>
+        <script>
+        function add(){
+            var numOne, numTwo, sum;
+            numOne = parseInt(document.getElementById("first").value);
+            numTwo = parseInt(document.getElementById("second").value);
+            sum = numOne + numTwo;
+            document.getElementById("sum").value = sum;
+        }
+
+        function sub(){
+            var numOne, numTwo, sub;
+            numOne = parseInt(document.getElementById("first").value);
+            numTwo = parseInt(document.getElementById("second").value);
+            sub = numOne - numTwo;
+            document.getElementById("sub").value = sub;
+        }
+
+        function mul(){
+            var numOne, numTwo, mul;
+            numOne = parseInt(document.getElementById("first").value);
+            numTwo = parseInt(document.getElementById("second").value);
+            mul = numOne * numTwo;
+            document.getElementById("mul").value = mul;
+        }
+
+        function div(){
+            var numOne, numTwo, div;
+            numOne = parseInt(document.getElementById("first").value);
+            numTwo = parseInt(document.getElementById("second").value);
+            div = numOne / numTwo;
+            document.getElementById("div").value = div;
+        }
+        </script>
+    </head>
+    <body>
+        <h1>My JavaScript Calculator </h1>
+        <p>Enter the First Number: <input id="first"></p>
+        <p>Enter the Second Number: <input id="second"></p>
+        <button onclick="add()">Add</button>
+        <button onclick="sub()">Sub</button>
+        <button onclick="mul()">Mul</button>
+        <button onclick="div()">Div</button>
+        <p>Sum = <input id="sum"></p>
+        <p>Sub = <input id="sub"></p>
+        <p>Mul = <input id="mul"></p>
+        <p>Div  = <input id="div"></p>
+    </body>
+</html>
